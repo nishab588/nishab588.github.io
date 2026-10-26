@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nisha Brown's Computer Science and Software Engineering ePortfolio">
+    <title>Nisha Brown | Software Engineering Portfolio</title>
+
+    <style>
+        :root {
+            --background: #11141F;
+            --surface: #1B2030;
+            --purple: #A78BFA;
+            --teal: #2DD4BF;
+            --text: #F1F5F9;
+            --muted: #B4BED0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #11141ff2;
+            border-bottom: 1px solid #34384a;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            color: var(--purple);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        /* Main layout */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 85px 0;
+            border-bottom: 1px solid #34384a;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.3;
+        }
+
+        h2 {
+            color: var(--purple);
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        /* Home */
+        .hero {
+            min-height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .eyebrow {
+            color: var(--teal);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            margin: 10px 0;
+            background: linear-gradient(90deg, var(--purple), var(--teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-top: 0;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background: var(--purple);
+            color: #11141F;
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--teal);
+            text-decoration: none;
+        }
+
+        /* About */
+        .about-content {
+            max-width: 850px;
+            color: var(--muted);
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid #34384a;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--teal);
+        }
+
+        .project-card h3 {
+            color: var(--teal);
+            margin-top: 0;
+        }
+
+        .project-card p {
+            color: var(--muted);
+        }
+
+        .project-status {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--purple);
+            margin-bottom: 12px;
+        }
+
+        /* Contact */
+        .contact-content {
+            max-width: 700px;
+            color: var(--muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 600px) {
+            nav {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: 55vh;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .project-card,
+            .button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="#home" class="logo">NB / Portfolio</a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home -->
+        <section id="home" class="hero">
+            <p class="eyebrow">Welcome to my ePortfolio</p>
+
+            <h1>Nisha Brown</h1>
+
+            <p class="subtitle">
+                Software Engineering | Computer Science
+            </p>
+
+            <p class="hero-description">
+                Exploring the creative and technical sides of software
+                development through programming, problem-solving,
+                and application design.
+            </p>
+
+            <a href="#projects" class="button">Explore My Projects</a>
+        </section>
+
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <div class="about-content">
+                <p>
+                    I am a Computer Science student at Southern New
+                    Hampshire University, concentrating in Software
+                    Engineering. Throughout my studies, I have
+                    discovered a growing interest in designing and
+                    building software applications.
+                </p>
+
+                <p>
+                    I enjoy the process of turning ideas into functional
+                    programs and approaching coding challenges much
+                    like solving puzzles. My coursework has allowed
+                    me to explore different programming languages,
+                    development techniques, and areas of computer science.
+                </p>
+
+                <p>
+                    My professional goal is to transition into a
+                    technology-related role within my current company,
+                    with a particular interest in software and
+                    application development. I also hope to explore
+                    mobile game development as a personal project.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Capstone Projects</h2>
+
+            <p>
+                This section will showcase my CS 499 Capstone
+                enhancements in three key areas of computer science.
+            </p>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <span class="project-status">Coming Soon</span>
+                    <h3>Software Engineering &amp; Design</h3>
+                    <p>
+                        An enhanced software development project
+                        demonstrating application design, functionality,
+                        and software engineering practices.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <span class="project-status">Coming Soon</span>
+                    <h3>Algorithms &amp; Data Structures</h3>
+                    <p>
+                        An enhanced project demonstrating algorithmic
+                        problem-solving, data organization, and
+                        computational efficiency.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <span class="project-status">Coming Soon</span>
+                    <h3>Databases</h3>
+                    <p>
+                        An enhanced database project demonstrating
+                        data management, database integration,
+                        and reliable information retrieval.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Connect With Me</h2>
+
+            <div class="contact-content">
+                <p>
+                    Thank you for visiting my Computer Science
+                    ePortfolio! You can explore my GitHub profile
+                    to view my repositories and programming projects.
+                </p>
+
+                <a
+                    href="https://github.com/nishab588"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button"
+                >
+                    Visit My GitHub
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nisha Brown | Computer Science ePortfolio</p>
+    </footer>
+
+</body>
+</html>
